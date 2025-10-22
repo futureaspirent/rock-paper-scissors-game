@@ -1,3 +1,8 @@
+Sure 👍 here’s your **clean final version (no comments)** — just pure working JavaScript code:
+
+---
+
+```js
 document.addEventListener("DOMContentLoaded", () => {
   const STORAGE_USER = "rps_userScore";
   const STORAGE_CPU = "rps_cpuScore";
@@ -93,12 +98,8 @@ document.addEventListener("DOMContentLoaded", () => {
       ) {
         resultClass = "win";
         userScore++;
-
         bigCircle.classList.add("ring-" + userChoice, "user-win-ring");
-
         nextBtn.classList.remove("hidden");
-
-  
         setTimeout(() => {
           hurryFull.classList.remove("hidden");
         }, 2000);
@@ -142,7 +143,14 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   playAgainBtn.addEventListener("click", resetUI);
-  nextBtn.addEventListener("click", resetUI);
+
+  nextBtn.addEventListener("click", () => {
+    resultScreen.classList.add("hidden");
+    gameChoicesSection.classList.add("hidden");
+    hurryFull.classList.remove("hidden");
+    nextBtn.classList.add("hidden");
+  });
+
   hurryFullPlay.addEventListener("click", () => {
     hurryFull.classList.add("hidden");
     resetUI();
@@ -153,3 +161,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
   resetUI();
 });
+```
